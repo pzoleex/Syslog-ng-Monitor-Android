@@ -42,3 +42,8 @@ Currently the application supports 3 commands. They are
 * show_config
 
 The configured Syslog-ng(s) can be edited and deleted easily.
+
+### Compile ###
+in eclipse, or:
+
+./gradlew --info assembleDebug
