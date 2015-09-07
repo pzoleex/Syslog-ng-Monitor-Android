@@ -148,7 +148,7 @@ public class CommandTask extends AsyncTask<String, Void, String>{
 			while ((line  = bufferedReader.readLine()) != null) 
 			{
 				if(!line.equals("null") && !line.equals(""))
-					sBuilder.append(line);
+					sBuilder.append(line+"\n");
 			}
 			
 			
