@@ -41,9 +41,10 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-public class SyslogngFragment extends Fragment {
+public class SyslogngFragment extends Fragment {    
     
     public Boolean changeStatus = false;
+    private static final String MONITOR_AGENT_DEFAULT_PORT = "2121";
     
     private Context context;
 	private Spinner spinnerClientCertificate;
@@ -117,6 +118,7 @@ public class SyslogngFragment extends Fragment {
         editTextSyslogngName = (EditText) rootView.findViewById(R.id.ai_et_syslogng_name);
         editTextHostName = (EditText) rootView.findViewById(R.id.ai_et_syslogng_input);
         editTextPortNumber = (EditText) rootView.findViewById(R.id.ai_et_port_input);
+        editTextPortNumber.setText(MONITOR_AGENT_DEFAULT_PORT);
         
         populateAllValues();
         
