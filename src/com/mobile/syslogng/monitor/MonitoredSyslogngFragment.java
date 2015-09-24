@@ -43,6 +43,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -334,9 +336,13 @@ public class MonitoredSyslogngFragment extends Fragment implements ICommandCallB
 	private void showResult(String message, Boolean isException){
 		
 		resultDialog = getAlertDialog(message, isException);
+		WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+		Window dialogWindow = resultDialog.getWindow();
+		layoutParams.copyFrom(dialogWindow.getAttributes());
+		layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+		layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
 		resultDialog.show();
-		
-		
+		dialogWindow.setAttributes(layoutParams);			
 	}
 
 	
